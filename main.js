@@ -21,7 +21,7 @@ function capitaliseFirstLetter(word) {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase()
+    playerSelection = playerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
         return `Draw! ${playerSelection} vs ${computerSelection}.`;
