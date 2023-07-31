@@ -23,16 +23,19 @@ function capitaliseFirstLetter(word) {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
 
+    let playerPrint = capitaliseFirstLetter(playerSelection);
+    let computerPrint = capitaliseFirstLetter(computerSelection);
+
     if (playerSelection === computerSelection) {
-        return `Draw! ${playerSelection} vs ${computerSelection}.`;
+        return `Draw! ${playerPrint} vs ${computerPrint}.`;
     }
     else if ((playerSelection === "rock" && computerSelection === "scissors")
              || (playerSelection === "paper" && computerSelection === "rock")
              || (playerSelection === "scissors" && computerSelection === "paper")) {
-        return `You win! ${playerSelection} beats ${computerSelection}.`;
+        return `You win! ${playerPrint} beats ${computerPrint}.`;
     }
     else {
-        return `You lose! ${computerSelection} beats ${playerSelection}.`;
+        return `You lose! ${computerPrint} beats ${playerPrint}.`;
     }
 }
 
