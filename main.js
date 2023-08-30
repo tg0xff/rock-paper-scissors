@@ -25,17 +25,18 @@ function capitaliseFirstLetter(word) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  // Return 1 if the player wins, 0 if the CPU wins, and -1 if it's a draw.
   if (playerSelection === computerSelection) {
-    return -1;
+    resultText.textContent = `Draw! ${playerPrint} vs ${computerPrint}.`;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    return 1;
+    resultText.textContent = `You win! ${playerPrint} beats ${computerPrint}.`;
+    playerWins++;
   } else {
-    return 0;
+    resultText.textContent = `You lose! ${computerPrint} beats ${playerPrint}.`;
+    cpuWins++;
   }
 }
 
@@ -47,17 +48,6 @@ function game(playerSelection) {
 
   if (playerWins !== 5 && cpuWins !== 5) {
     result = playRound(playerSelection, computerSelection);
-
-    if (result === 1) {
-      resultText.textContent = `You win! ${playerPrint} beats ${computerPrint}.`;
-      playerWins++;
-    } else if (result === 0) {
-      resultText.textContent = `You lose! ${computerPrint} beats ${playerPrint}.`;
-      cpuWins++;
-    } else if (result === -1) {
-      resultText.textContent = `Draw! ${playerPrint} vs ${computerPrint}.`;
-    }
-
     playerScore.textContent = playerWins;
     cpuScore.textContent = cpuWins;
   }
