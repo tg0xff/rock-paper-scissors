@@ -25,6 +25,9 @@ function capitaliseFirstLetter(word) {
 }
 
 function playRound(playerSelection, computerSelection) {
+  let playerPrint = capitaliseFirstLetter(playerSelection);
+  let computerPrint = capitaliseFirstLetter(computerSelection);
+
   if (playerSelection === computerSelection) {
     resultText.textContent = `Draw! ${playerPrint} vs ${computerPrint}.`;
   } else if (
@@ -42,9 +45,6 @@ function playRound(playerSelection, computerSelection) {
 
 function game(playerSelection) {
   let computerSelection = getComputerChoice();
-  let playerPrint = capitaliseFirstLetter(playerSelection);
-  let computerPrint = capitaliseFirstLetter(computerSelection);
-  let result;
 
   if (playerWins !== 5 && cpuWins !== 5) {
     result = playRound(playerSelection, computerSelection);
