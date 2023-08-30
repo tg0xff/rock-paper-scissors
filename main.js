@@ -39,12 +39,12 @@ function playRound(playerSelection, computerSelection) {
 
 function game(playerSelection) {
   let computerSelection = getComputerChoice();
-  console.log(playRound(playerSelection, computerSelection));
+  const p = document.querySelector("p");
+
+  p.textContent = playRound(playerSelection, computerSelection);
 }
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    game(e.target.textContent);
-  });
+  button.addEventListener("click", (e) => game(e.target.textContent));
 });
