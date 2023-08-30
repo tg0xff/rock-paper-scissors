@@ -1,4 +1,3 @@
-let rounds = 0;
 let playerWins = 0;
 let cpuWins = 0;
 const resultText = document.querySelector("#result-text");
@@ -46,7 +45,7 @@ function game(playerSelection) {
   let computerPrint = capitaliseFirstLetter(computerSelection);
   let result;
 
-  if (rounds < 5) {
+  if (playerWins !== 5 && cpuWins !== 5) {
     result = playRound(playerSelection, computerSelection);
 
     if (result === 1) {
@@ -57,24 +56,17 @@ function game(playerSelection) {
       cpuWins++;
     } else if (result === -1) {
       resultText.textContent = `Draw! ${playerPrint} vs ${computerPrint}.`;
-      playerWins++;
-      cpuWins++;
     }
 
     playerScore.textContent = playerWins;
     cpuScore.textContent = cpuWins;
-  } else if (rounds === 5) {
-    if (playerWins > cpuWins) {
-      resultText.textContent = "Player wins!";
-    } else if (cpuWins > playerWins) {
-      resultText.textContent = "CPU wins!";
-    } else if (playerWins === cpuWins) {
-      // Unlikely to happen, but worth considering nonetheless.
-      resultText.textContent = "It's a draw!";
-    }
   }
 
-  rounds++;
+  if (playerWins === 5) {
+    resultText.textContent = "Player wins! Game over.";
+  } else if (cpuWins === 5) {
+    resultText.textContent = "CPU wins! Game over.";
+  }
 }
 
 const buttons = document.querySelectorAll("button");
