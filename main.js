@@ -26,8 +26,6 @@ function capitaliseFirstLetter(word) {
 }
 
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
-
   // Return 1 if the player wins, 0 if the CPU wins, and -1 if it's a draw.
   if (playerSelection === computerSelection) {
     return -1;
@@ -81,5 +79,5 @@ function game(playerSelection) {
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
-  button.addEventListener("click", (e) => game(e.target.textContent));
+  button.addEventListener("click", (e) => game(e.target.id));
 });
