@@ -1,4 +1,3 @@
-// * Print the scores after playing each round.
 // * Determine who's the winner after the 5 rounds have been played.
 // * Print a message that informs the user who's the overall winner.
 
@@ -19,6 +18,8 @@ function playGame() {
     cpuMove = getComputerChoice();
     roundMessage = playRound(playerMove, cpuMove);
     console.log(roundMessage);
+    // * Print the scores after playing each round.
+    console.log(`Player: ${playerScore} CPU: ${cpuScore}`);
   }
 }
 
