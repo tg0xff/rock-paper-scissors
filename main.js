@@ -53,9 +53,9 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection == "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    gameResult = `${playerSelection} vs ${computerSelection}. Player wins!`;
+    gameResult = `Player's ${playerSelection} vs CPU's ${computerSelection}. Player wins!`;
   } else {
-    gameResult = `${playerSelection} vs ${computerSelection}. CPU wins!`;
+    gameResult = `CPU's ${computerSelection} vs Player's ${playerSelection}. CPU wins!`;
   }
   return gameResult;
 }
