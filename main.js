@@ -54,6 +54,8 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     gameResult = `${playerSelection} vs ${computerSelection}. Player wins!`;
+  } else {
+    gameResult = `${playerSelection} vs ${computerSelection}. CPU wins!`;
   }
   return gameResult;
 }
