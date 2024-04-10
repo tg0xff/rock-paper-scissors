@@ -2,11 +2,18 @@
 // * Determine who's the winner after the 5 rounds have been played.
 // * Print a message that informs the user who's the overall winner.
 
+let playerScore;
+let cpuScore;
+
 // * Make a function that plays 5 rounds in a row.
 function playGame() {
   let playerMove;
   let cpuMove;
   let roundMessage;
+
+  playerScore = 0;
+  cpuScore = 0;
+
   for (let i = 0; i < 5; i++) {
     playerMove = getPlayerChoice();
     cpuMove = getComputerChoice();
@@ -59,14 +66,18 @@ function playRound(playerSelection, computerSelection) {
   // rules.
   if (playerSelection === computerSelection) {
     gameResult = `${playerSelection} vs ${computerSelection}. It's a draw!`;
+    playerScore++;
+    cpuScore++;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
     (playerSelection === "paper" && computerSelection == "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     gameResult = `Player's ${playerSelection} vs CPU's ${computerSelection}. Player wins!`;
+    playerScore++;
   } else {
     gameResult = `CPU's ${computerSelection} vs Player's ${playerSelection}. CPU wins!`;
+    cpuScore++;
   }
   // * Return a sentence that tells the user who's the winner.
   return gameResult;
