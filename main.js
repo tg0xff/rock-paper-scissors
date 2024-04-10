@@ -1,6 +1,3 @@
-// * Determine who's the winner after the 5 rounds have been played.
-// * Print a message that informs the user who's the overall winner.
-
 let playerScore;
 let cpuScore;
 
@@ -20,6 +17,14 @@ function playGame() {
     console.log(roundMessage);
     // * Print the scores after playing each round.
     console.log(`Player: ${playerScore} CPU: ${cpuScore}`);
+  }
+
+  // * Determine who's the winner after the 5 rounds have been played.
+  // * Print a message that informs the user who's the overall winner.
+  if (playerScore > cpuScore) {
+    console.log("Player wins the game!")
+  } else {
+    console.log("CPU wins the game!")
   }
 }
 
