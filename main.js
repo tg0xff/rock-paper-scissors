@@ -28,7 +28,9 @@ function playGame() {
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
-  if (playerScore > cpuScore) {
+  if (playerScore === cpuScore) {
+    console.log("This game is a draw!")
+  } else if (playerScore > cpuScore) {
     console.log("You won this game!")
   } else {
     console.log("You lost this game!")
