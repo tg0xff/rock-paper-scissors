@@ -16,6 +16,7 @@ function playRound() {
   let playerMove;
   // * Make a variable the stores the CPU's move.
   let cpuMove;
+
   // * Ask the user for input, so that they can make a move.
   let keepGoing = true;
   while (keepGoing) {
@@ -29,5 +30,6 @@ function playRound() {
       keepGoing = false;
     }
   }
+
   return gameResult;
 }
