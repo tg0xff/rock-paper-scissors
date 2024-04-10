@@ -22,6 +22,20 @@ function playGame() {
     playerMove = getPlayerChoice();
     cpuMove = getComputerChoice();
     roundResult = playRound(playerMove, cpuMove);
+
+    switch (roundResult) {
+      case DRAW:
+        playerScore++;
+        cpuScore++;
+        break;
+      case PLAYER_WINS:
+        playerScore++;
+        break;
+      case CPU_WINS:
+        cpuScore++;
+        break;
+    }
+
     console.log(roundResult);
     // * Print the scores after playing each round.
     console.log(`You: ${playerScore} CPU: ${cpuScore}`);
