@@ -1,6 +1,13 @@
 let playerScore;
 let cpuScore;
 
+function capitalizeFirstLetter(s) {
+  let newString = s.slice(0, 1);
+  newString = newString.toUpperCase();
+  newString += s.slice(1);
+  return newString;
+}
+
 // * Make a function that plays 5 rounds in a row.
 function playGame() {
   let playerMove;
