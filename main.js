@@ -1,4 +1,3 @@
-// * Print a sentence that tells the user who's the winner.
 // * Make a function that plays 5 rounds in a row.
 // * Print the scores after playing each round.
 // * Determine who's the winner after the 5 rounds have been played.
@@ -57,5 +56,6 @@ function playRound(playerSelection, computerSelection) {
   } else {
     gameResult = `CPU's ${computerSelection} vs Player's ${playerSelection}. CPU wins!`;
   }
+  // * Return a sentence that tells the user who's the winner.
   return gameResult;
 }
