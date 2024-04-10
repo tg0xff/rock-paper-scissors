@@ -6,10 +6,12 @@
 function playGame() {
   let playerMove;
   let cpuMove;
+  let roundMessage;
   for (let i = 0; i < 5; i++) {
     playerMove = getPlayerChoice();
     cpuMove = getComputerChoice();
-    console.log(playRound(playerMove, cpuMove));
+    roundMessage = playRound(playerMove, cpuMove);
+    console.log(roundMessage);
   }
 }
 
