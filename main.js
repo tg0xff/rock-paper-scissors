@@ -27,16 +27,18 @@ function playGame() {
       case DRAW:
         playerScore++;
         cpuScore++;
+        console.log(`Draw! ${capitalizeFirstLetter(playerSelection)} vs ${computerSelection}.`);
         break;
       case PLAYER_WINS:
         playerScore++;
+        console.log(`You win this round! ${capitalizeFirstLetter(playerSelection)} beats ${computerSelection}.`);
         break;
       case CPU_WINS:
         cpuScore++;
+        console.log(`You lose this round! ${capitalizeFirstLetter(computerSelection)} beats ${playerSelection}.`);
         break;
     }
 
-    console.log(roundResult);
     // * Print the scores after playing each round.
     console.log(`You: ${playerScore} CPU: ${cpuScore}`);
   }
