@@ -1,6 +1,3 @@
-// * Generate a random number.
-// * Use that random number to determine the CPU's move.
-// * Store the CPU's move in its variable.
 // * Compare both variables and decide who's the winner according to the game's
 // rules.
 // * Print a sentence that tells the user who's the winner.
@@ -28,11 +25,26 @@ function getPlayerChoice() {
   return move;
 }
 
+function getComputerChoice() {
+  // * Make a variable the stores the CPU's move.
+  let move;
+  // * Generate a random number.
+  let num = Math.random();
+  num = num.toFixed(4);
+  // * Use that random number to determine the CPU's move.
+  // * Store the CPU's move in its variable.
+  if (num <= 0.3333) {
+    move = "rock";
+  } else if (num <= 0.6666) {
+    move = "paper";
+  } else {
+    move = "scissors";
+  }
+  return move;
+}
+
 // * Make a function that plays a round of rock paper scissors.
 function playRound(playerSelection, computerSelection) {
   let gameResult;
-  // * Make a variable the stores the CPU's move.
-  let cpuMove;
-
   return gameResult;
 }
