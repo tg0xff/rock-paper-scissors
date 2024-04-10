@@ -1,6 +1,10 @@
 let playerScore;
 let cpuScore;
 
+const DRAW = 0;
+const PLAYER_WINS = 1;
+const CPU_WINS = 2;
+
 function capitalizeFirstLetter(s) {
   let newString = s.slice(0, 1);
   newString = newString.toUpperCase();
