@@ -1,8 +1,3 @@
-// * Ask the user for input, so that they can make a move.
-// * Store the player's move in its variable.
-// * Normalise the user's input letter case, so that they can type their move
-// however they want.
-// * Ask for user input again if they didn't input a valid move.
 // * Generate a random number.
 // * Use that random number to determine the CPU's move.
 // * Store the CPU's move in its variable.
@@ -21,5 +16,18 @@ function playRound() {
   let playerMove;
   // * Make a variable the stores the CPU's move.
   let cpuMove;
+  // * Ask the user for input, so that they can make a move.
+  let keepGoing = true;
+  while (keepGoing) {
+    // * Store the player's move in its variable.
+    playerMove = prompt("Enter your move, 'rock', 'paper' or 'scissors':");
+    // * Normalise the user's input letter case, so that they can type their move
+    // however they want.
+    playerMove = playerMove.toLowerCase();
+    // * Ask for user input again if they didn't input a valid move.
+    if (playerMove === "rock" || playerMove === "paper" || playerMove === "scissors") {
+      keepGoing = false;
+    }
+  }
   return gameResult;
 }
