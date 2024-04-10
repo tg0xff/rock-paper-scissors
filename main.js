@@ -3,7 +3,7 @@
 // * Print a message that informs the user who's the overall winner.
 
 // * Make a function that plays 5 rounds in a row.
-function playRound() {
+function playGame() {
   let playerMove;
   let cpuMove;
   for (let i = 0; i < 5; i++) {
