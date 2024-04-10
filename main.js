@@ -29,11 +29,11 @@ function playGame() {
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
   if (playerScore === cpuScore) {
-    console.log("This game is a draw!")
+    console.log("This game is a draw!");
   } else if (playerScore > cpuScore) {
-    console.log("You won this game!")
+    console.log("You won this game!");
   } else {
-    console.log("You lost this game!")
+    console.log("You lost this game!");
   }
 }
 
@@ -52,7 +52,7 @@ function getPlayerChoice() {
     if (move === "rock" || move === "paper" || move === "scissors") {
       keepGoing = false;
     } else {
-      alert("Please enter a valid move.")
+      alert("Please enter a valid move.");
     }
   }
   return move;
