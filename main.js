@@ -2,10 +2,6 @@
 // * Determine who's the winner after the 5 rounds have been played.
 // * Print a message that informs the user who's the overall winner.
 
-const DRAW = 0;
-const PLAYER_WINS = 1;
-const CPU_WINS = 2;
-
 // * Make a function that plays 5 rounds in a row.
 function playGame() {
   let playerMove;
