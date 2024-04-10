@@ -9,6 +9,7 @@ function playGame() {
   for (let i = 0; i < 5; i++) {
     playerMove = getPlayerChoice();
     cpuMove = getComputerChoice();
+    console.log(playRound(playerMove, cpuMove));
   }
 }
 
