@@ -1,5 +1,3 @@
-// * Compare both variables and decide who's the winner according to the game's
-// rules.
 // * Print a sentence that tells the user who's the winner.
 // * Make a function that plays 5 rounds in a row.
 // * Print the scores after playing each round.
@@ -46,5 +44,12 @@ function getComputerChoice() {
 // * Make a function that plays a round of rock paper scissors.
 function playRound(playerSelection, computerSelection) {
   let gameResult;
+  // * Compare both variables and decide who's the winner according to the game's
+  // rules.
+  if (playerSelection === "rock" && computerSelection === "scissors"
+    || playerSelection === "paper" && computerSelection == "rock"
+    || playerSelection === "scissors" && computerSelection === "paper") {
+      gameResult = `${playerSelection} vs ${computerSelection}. Player wins!`;
+    }
   return gameResult;
 }
