@@ -4,9 +4,11 @@
 
 // * Make a function that plays 5 rounds in a row.
 function playRound() {
+  let playerMove;
+  let cpuMove;
   for (let i = 0; i < 5; i++) {
-    let playerMove = getPlayerChoice();
-    let cpuMove = getComputerChoice();
+    playerMove = getPlayerChoice();
+    cpuMove = getComputerChoice();
   }
 }
 
