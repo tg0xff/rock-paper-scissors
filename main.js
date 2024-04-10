@@ -88,3 +88,5 @@ function playRound(playerSelection, computerSelection) {
   // * Return a sentence that tells the user who's the winner.
   return gameResult;
 }
+
+playGame();
