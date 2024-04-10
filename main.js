@@ -49,6 +49,8 @@ function getPlayerChoice() {
     // * Ask for user input again if they didn't input a valid move.
     if (move === "rock" || move === "paper" || move === "scissors") {
       keepGoing = false;
+    } else {
+      alert("Please enter a valid move.")
     }
   }
   return move;
