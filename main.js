@@ -78,7 +78,7 @@ function playRound(playerSelection, computerSelection) {
   // * Compare both variables and decide who's the winner according to the game's
   // rules.
   if (playerSelection === computerSelection) {
-    gameResult = `Draw! ${playerSelection} vs ${computerSelection}.`;
+    gameResult = `Draw! ${capitalizeFirstLetter(playerSelection)} vs ${computerSelection}.`;
     playerScore++;
     cpuScore++;
   } else if (
@@ -86,10 +86,10 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection == "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    gameResult = `You win this round! ${playerSelection} beats ${computerSelection}.`;
+    gameResult = `You win this round! ${capitalizeFirstLetter(playerSelection)} beats ${computerSelection}.`;
     playerScore++;
   } else {
-    gameResult = `You lose this round! ${computerSelection} beats ${playerSelection}.`;
+    gameResult = `You lose this round! ${capitalizeFirstLetter(computerSelection)} beats ${playerSelection}.`;
     cpuScore++;
   }
   // * Return a sentence that tells the user who's the winner.
