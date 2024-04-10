@@ -9,27 +9,30 @@
 // * Determine who's the winner after the 5 rounds have been played.
 // * Print a message that informs the user who's the overall winner.
 
-// * Make a function that plays a round of rock paper scissors.
-function playRound() {
-  let gameResult;
+// * Ask the user for input, so that they can make a move.
+function getPlayerChoice() {
   // * Make a variable the stores the user's move.
-  let playerMove;
-  // * Make a variable the stores the CPU's move.
-  let cpuMove;
-
-  // * Ask the user for input, so that they can make a move.
+  let move;
   let keepGoing = true;
   while (keepGoing) {
     // * Store the player's move in its variable.
-    playerMove = prompt("Enter your move, 'rock', 'paper' or 'scissors':");
+    move = prompt("Enter your move, 'rock', 'paper' or 'scissors':");
     // * Normalise the user's input letter case, so that they can type their move
     // however they want.
-    playerMove = playerMove.toLowerCase();
+    move = move.toLowerCase();
     // * Ask for user input again if they didn't input a valid move.
-    if (playerMove === "rock" || playerMove === "paper" || playerMove === "scissors") {
+    if (move === "rock" || move === "paper" || move === "scissors") {
       keepGoing = false;
     }
   }
+  return move;
+}
+
+// * Make a function that plays a round of rock paper scissors.
+function playRound() {
+  let gameResult;
+  // * Make a variable the stores the CPU's move.
+  let cpuMove;
 
   return gameResult;
 }
