@@ -46,10 +46,14 @@ function playRound(playerSelection, computerSelection) {
   let gameResult;
   // * Compare both variables and decide who's the winner according to the game's
   // rules.
-  if (playerSelection === "rock" && computerSelection === "scissors"
-    || playerSelection === "paper" && computerSelection == "rock"
-    || playerSelection === "scissors" && computerSelection === "paper") {
-      gameResult = `${playerSelection} vs ${computerSelection}. Player wins!`;
-    }
+  if (playerSelection === computerSelection) {
+    gameResult = `${playerSelection} vs ${computerSelection}. It's a draw!`;
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection == "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    gameResult = `${playerSelection} vs ${computerSelection}. Player wins!`;
+  }
   return gameResult;
 }
