@@ -1,7 +1,14 @@
-// * Make a function that plays 5 rounds in a row.
 // * Print the scores after playing each round.
 // * Determine who's the winner after the 5 rounds have been played.
 // * Print a message that informs the user who's the overall winner.
+
+// * Make a function that plays 5 rounds in a row.
+function playRound() {
+  for (let i = 0; i < 5; i++) {
+    let playerMove = getPlayerChoice();
+    let cpuMove = getComputerChoice();
+  }
+}
 
 // * Ask the user for input, so that they can make a move.
 function getPlayerChoice() {
