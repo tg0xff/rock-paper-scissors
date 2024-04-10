@@ -29,7 +29,7 @@ function getPlayerChoice() {
 }
 
 // * Make a function that plays a round of rock paper scissors.
-function playRound() {
+function playRound(playerSelection, computerSelection) {
   let gameResult;
   // * Make a variable the stores the CPU's move.
   let cpuMove;
