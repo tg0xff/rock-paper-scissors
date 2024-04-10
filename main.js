@@ -16,15 +16,15 @@ function playGame() {
     roundMessage = playRound(playerMove, cpuMove);
     console.log(roundMessage);
     // * Print the scores after playing each round.
-    console.log(`Player: ${playerScore} CPU: ${cpuScore}`);
+    console.log(`You: ${playerScore} CPU: ${cpuScore}`);
   }
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
   if (playerScore > cpuScore) {
-    console.log("Player wins the game!")
+    console.log("You won this game!")
   } else {
-    console.log("CPU wins the game!")
+    console.log("You lost this game!")
   }
 }
 
@@ -71,7 +71,7 @@ function playRound(playerSelection, computerSelection) {
   // * Compare both variables and decide who's the winner according to the game's
   // rules.
   if (playerSelection === computerSelection) {
-    gameResult = `${playerSelection} vs ${computerSelection}. It's a draw!`;
+    gameResult = `Draw! ${playerSelection} vs ${computerSelection}.`;
     playerScore++;
     cpuScore++;
   } else if (
@@ -79,10 +79,10 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection == "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
-    gameResult = `Player's ${playerSelection} vs CPU's ${computerSelection}. Player wins!`;
+    gameResult = `You win this round! ${playerSelection} beats ${computerSelection}.`;
     playerScore++;
   } else {
-    gameResult = `CPU's ${computerSelection} vs Player's ${playerSelection}. CPU wins!`;
+    gameResult = `You lose this round! ${computerSelection} beats ${playerSelection}.`;
     cpuScore++;
   }
   // * Return a sentence that tells the user who's the winner.
