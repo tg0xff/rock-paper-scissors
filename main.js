@@ -13,7 +13,7 @@ function capitalizeFirstLetter(s) {
 function playGame() {
   let playerMove;
   let cpuMove;
-  let roundMessage;
+  let roundResult;
 
   let playerScore = 0;
   let cpuScore = 0;
@@ -21,8 +21,8 @@ function playGame() {
   for (let i = 0; i < 5; i++) {
     playerMove = getPlayerChoice();
     cpuMove = getComputerChoice();
-    roundMessage = playRound(playerMove, cpuMove);
-    console.log(roundMessage);
+    roundResult = playRound(playerMove, cpuMove);
+    console.log(roundResult);
     // * Print the scores after playing each round.
     console.log(`You: ${playerScore} CPU: ${cpuScore}`);
   }
