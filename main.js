@@ -1,6 +1,3 @@
-let playerScore;
-let cpuScore;
-
 const DRAW = 0;
 const PLAYER_WINS = 1;
 const CPU_WINS = 2;
@@ -18,8 +15,8 @@ function playGame() {
   let cpuMove;
   let roundMessage;
 
-  playerScore = 0;
-  cpuScore = 0;
+  let playerScore = 0;
+  let cpuScore = 0;
 
   for (let i = 0; i < 5; i++) {
     playerMove = getPlayerChoice();
