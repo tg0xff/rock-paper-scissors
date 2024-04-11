@@ -23,6 +23,7 @@ function playGame() {
     cpuMove = getComputerChoice();
     roundResult = playRound(playerMove, cpuMove);
 
+    // * Print a sentence that tells the user who's the winner.
     switch (roundResult) {
       case DRAW:
         playerScore++;
@@ -109,7 +110,6 @@ function playRound(playerSelection, computerSelection) {
   } else {
     gameResult = CPU_WINS;
   }
-  // * Return a sentence that tells the user who's the winner.
   return gameResult;
 }
 
