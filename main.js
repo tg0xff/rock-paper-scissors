@@ -22,7 +22,7 @@ function playGame(e) {
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
   let playerMove = e.target.textContent;
-  // * Ask for user input again if they didn't input a valid move.
+  // * Ignore user input again if they didn't input a valid move.
   if (
     playerMove !== "rock" &&
     playerMove !== "paper" &&
