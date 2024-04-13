@@ -63,7 +63,7 @@ function playGame(e) {
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
-  if (roundsPlayed < 5) {
+  if (roundsPlayed < 4) {
     roundsPlayed++;
   } else {
     if (playerScore === cpuScore) {
