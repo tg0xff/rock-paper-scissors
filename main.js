@@ -112,5 +112,3 @@ function playRound(playerSelection, computerSelection) {
   }
   return gameResult;
 }
-
-playGame();
