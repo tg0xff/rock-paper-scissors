@@ -23,18 +23,18 @@ function capitalizeFirstLetter(s) {
 function getConstantFromId(id) {
   let moveConstant;
   switch (id) {
-  case "r":
-    moveConstant = ROCK;
-    break;
-  case "p":
-    moveConstant = PAPER;
-    break;
-  case "s":
-    moveConstant = SCISSORS;
-    break;
-  default:
-    moveConstant = -1;
-    break;
+    case "r":
+      moveConstant = ROCK;
+      break;
+    case "p":
+      moveConstant = PAPER;
+      break;
+    case "s":
+      moveConstant = SCISSORS;
+      break;
+    default:
+      moveConstant = -1;
+      break;
   }
   return moveConstant;
 }
@@ -50,15 +50,14 @@ function getMoveName(moveSymbol) {
 }
 
 function updateScores(roundResult, playerMove, cpuMove) {
-  let playerMoveName;
-  let cpuMoveName;
+  let playerMoveName = getMoveName(playerMove);
+  let cpuMoveName = getMoveName(cpuMove);
 
   // * Print a sentence that tells the user who's the winner.
   switch (roundResult) {
     case DRAW:
       playerScore++;
       cpuScore++;
-      playerMoveName = getMoveName(playerMove);
       results.textContent = `Draw! ${capitalizeFirstLetter(playerMoveName)} vs ${playerMoveName}.`;
       break;
     case PLAYER_WINS:
@@ -143,11 +142,11 @@ function playRound(playerSelection, computerSelection) {
     gameResult = DRAW;
   } else if (
     // Rock vs scissors.
-    (playerSelection - computerSelection === -3) ||
+    playerSelection - computerSelection === -3 ||
     // Paper vs rock.
-    (playerSelection - computerSelection === 1) ||
+    playerSelection - computerSelection === 1 ||
     // Scissors vs paper.
-    (playerSelection - computerSelection === 2)
+    playerSelection - computerSelection === 2
   ) {
     gameResult = PLAYER_WINS;
   } else {
