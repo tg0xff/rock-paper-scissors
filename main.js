@@ -49,22 +49,10 @@ function getMoveName(moveSymbol) {
   }
 }
 
-// * Make a function that plays 5 rounds in a row.
-function playGame(e) {
-  // * Ask the user for input, so that they can make a move.
-  // * Make a variable the stores the user's move.
-  // * Store the player's move in its variable.
-  let playerMove = e.target.getAttribute("id");
-  playerMove = getConstantFromId(playerMove);
-  // * Ignore user input if they didn't input a valid move.
-  if (playerMove === -1) {
-    return;
-  }
-  let cpuMove = getComputerChoice();
-  let roundResult = playRound(playerMove, cpuMove);
-
+function updateScores(roundResult, playerMove, cpuMove) {
   let playerMoveName;
   let cpuMoveName;
+
   // * Print a sentence that tells the user who's the winner.
   switch (roundResult) {
     case DRAW:
@@ -91,6 +79,23 @@ function playGame(e) {
 
   // * Print the scores after playing each round.
   results.innerHTML += `<br>You: ${playerScore} CPU: ${cpuScore}`;
+}
+
+// * Make a function that plays 5 rounds in a row.
+function playGame(e) {
+  // * Ask the user for input, so that they can make a move.
+  // * Make a variable the stores the user's move.
+  // * Store the player's move in its variable.
+  let playerMove = e.target.getAttribute("id");
+  playerMove = getConstantFromId(playerMove);
+  // * Ignore user input if they didn't input a valid move.
+  if (playerMove === -1) {
+    return;
+  }
+  let cpuMove = getComputerChoice();
+
+  let roundResult = playRound(playerMove, cpuMove);
+  updateScores(roundResult, playerMove, cpuMove);
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
