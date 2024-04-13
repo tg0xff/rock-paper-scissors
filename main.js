@@ -7,7 +7,7 @@ let cpuScore = 0;
 let roundsPlayed = 0;
 
 const button = document.querySelector("#buttons");
-button.addEventListener("click", playGame)
+button.addEventListener("click", playGame);
 
 function capitalizeFirstLetter(s) {
   let newString = s.slice(0, 1);
@@ -26,7 +26,11 @@ function playGame(e) {
   // however they want.
   playerMove = playerMove.toLowerCase();
   // * Ask for user input again if they didn't input a valid move.
-  if (playerMove === "rock" || playerMove === "paper" || playerMove === "scissors") {
+  if (
+    playerMove === "rock" ||
+    playerMove === "paper" ||
+    playerMove === "scissors"
+  ) {
     return;
   }
 
@@ -35,19 +39,23 @@ function playGame(e) {
 
   // * Print a sentence that tells the user who's the winner.
   switch (roundResult) {
-  case DRAW:
-    playerScore++;
-    cpuScore++;
-    console.log(`Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`);
-    break;
-  case PLAYER_WINS:
-    playerScore++;
-    console.log(`You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`);
-    break;
-  case CPU_WINS:
-    cpuScore++;
-    console.log(`You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`);
-    break;
+    case DRAW:
+      playerScore++;
+      cpuScore++;
+      console.log(`Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`);
+      break;
+    case PLAYER_WINS:
+      playerScore++;
+      console.log(
+        `You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`,
+      );
+      break;
+    case CPU_WINS:
+      cpuScore++;
+      console.log(
+        `You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`,
+      );
+      break;
   }
 
   // * Print the scores after playing each round.
