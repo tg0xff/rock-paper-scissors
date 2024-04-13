@@ -60,20 +60,29 @@ function playGame(e) {
   let cpuMove = getComputerChoice();
   let roundResult = playRound(playerMove, cpuMove);
 
+  let playerMoveName;
+  let cpuMoveName;
   // * Print a sentence that tells the user who's the winner.
   switch (roundResult) {
     case DRAW:
       playerScore++;
       cpuScore++;
-      results.textContent = `Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`;
+      playerMoveName = getMoveName(playerMove);
+      results.textContent = `Draw! ${capitalizeFirstLetter(playerMoveName)} vs ${playerMoveName}.`;
       break;
     case PLAYER_WINS:
       playerScore++;
-      results.textContent = `You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`;
+      playerMoveName = getMoveName(playerMove);
+      playerMoveName = capitalizeFirstLetter(playerMoveName);
+      cpuMoveName = getMoveName(cpuMove);
+      results.textContent = `You win this round! ${playerMoveName} beats ${cpuMoveName}.`;
       break;
     case CPU_WINS:
       cpuScore++;
-      results.textContent = `You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`;
+      playerMoveName = getMoveName(playerMove);
+      cpuMoveName = getMoveName(cpuMove);
+      cpuMoveName = capitalizeFirstLetter(cpuMoveName);
+      results.textContent = `You lose this round! ${cpuMoveName} beats ${playerMoveName}.`;
       break;
   }
 
