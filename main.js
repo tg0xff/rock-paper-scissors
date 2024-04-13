@@ -20,6 +20,25 @@ function capitalizeFirstLetter(s) {
   return newString;
 }
 
+function getConstantFromId(id) {
+  let moveConstant;
+  switch (id) {
+  case "r":
+    moveConstant = ROCK;
+    break;
+  case "p":
+    moveConstant = PAPER;
+    break;
+  case "s":
+    moveConstant = SCISSORS;
+    break;
+  default:
+    moveConstant = -1;
+    break;
+  }
+  return moveConstant;
+}
+
 function getMoveName(moveSymbol) {
   if (moveSymbol === ROCK) {
     return "rock";
@@ -36,27 +55,11 @@ function playGame(e) {
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
   let playerMove = e.target.getAttribute("id");
-
-  switch (playerMove) {
-  case "r":
-    playerMove = ROCK;
-    break;
-  case "p":
-    playerMove = PAPER;
-    break;
-  case "s":
-    playerMove = SCISSORS;
-    break;
-  default:
-    playerMove = -1;
-    break;
-  }
-
+  playerMove = getConstantFromId(playerMove);
   // * Ignore user input if they didn't input a valid move.
   if (playerMove === -1) {
     return;
   }
-
   let cpuMove = getComputerChoice();
   let roundResult = playRound(playerMove, cpuMove);
 
