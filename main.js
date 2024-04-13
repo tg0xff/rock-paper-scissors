@@ -74,6 +74,8 @@ function playGame(e) {
       console.log("You lost this game!");
     }
     roundsPlayed = 0;
+    playerScore = 0;
+    cpuScore = 0;
   }
 }
 
