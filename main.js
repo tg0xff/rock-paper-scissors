@@ -1,6 +1,9 @@
 const DRAW = 0;
 const PLAYER_WINS = 1;
 const CPU_WINS = 2;
+const ROCK = 2;
+const PAPER = 3;
+const SCISSORS = 5;
 
 let playerScore = 0;
 let cpuScore = 0;
