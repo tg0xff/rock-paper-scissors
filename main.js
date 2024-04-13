@@ -2,6 +2,13 @@ const DRAW = 0;
 const PLAYER_WINS = 1;
 const CPU_WINS = 2;
 
+let playerScore = 0;
+let cpuScore = 0;
+let roundsPlayed = 0;
+
+const button = document.querySelector("#buttons");
+button.addEventListener("click", playGame)
+
 function capitalizeFirstLetter(s) {
   let newString = s.slice(0, 1);
   newString = newString.toUpperCase();
@@ -93,10 +100,3 @@ function playRound(playerSelection, computerSelection) {
   }
   return gameResult;
 }
-
-let playerScore = 0;
-let cpuScore = 0;
-let roundsPlayed = 0;
-
-const button = document.querySelector("#buttons");
-button.addEventListener("click", playGame)
