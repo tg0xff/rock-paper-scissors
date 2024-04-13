@@ -57,22 +57,6 @@ function playGame(e) {
   }
 }
 
-function getPlayerChoice() {
-  let move;
-  let keepGoing = true;
-  while (keepGoing) {
-    move = prompt("Enter your move, 'rock', 'paper' or 'scissors':");
-    move = move.toLowerCase();
-    // * Ask for user input again if they didn't input a valid move.
-    if (move === "rock" || move === "paper" || move === "scissors") {
-      keepGoing = false;
-    } else {
-      alert("Please enter a valid move.");
-    }
-  }
-  return move;
-}
-
 function getComputerChoice() {
   // * Make a variable the stores the CPU's move.
   let move;
