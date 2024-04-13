@@ -62,15 +62,11 @@ function updateScores(roundResult, playerMove, cpuMove) {
       break;
     case PLAYER_WINS:
       playerScore++;
-      playerMoveName = getMoveName(playerMove);
       playerMoveName = capitalizeFirstLetter(playerMoveName);
-      cpuMoveName = getMoveName(cpuMove);
       results.textContent = `You win this round! ${playerMoveName} beats ${cpuMoveName}.`;
       break;
     case CPU_WINS:
       cpuScore++;
-      playerMoveName = getMoveName(playerMove);
-      cpuMoveName = getMoveName(cpuMove);
       cpuMoveName = capitalizeFirstLetter(cpuMoveName);
       results.textContent = `You lose this round! ${cpuMoveName} beats ${playerMoveName}.`;
       break;
