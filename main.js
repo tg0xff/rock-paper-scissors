@@ -58,7 +58,8 @@ function updateScores(roundResult, playerMove, cpuMove) {
     case DRAW:
       playerScore++;
       cpuScore++;
-      results.textContent = `Draw! ${capitalizeFirstLetter(playerMoveName)} vs ${playerMoveName}.`;
+      const capitalizedMove = capitalizeFirstLetter(playerMoveName);
+      results.textContent = `Draw! ${capitalizedMove} vs ${playerMoveName}.`;
       break;
     case PLAYER_WINS:
       playerScore++;
