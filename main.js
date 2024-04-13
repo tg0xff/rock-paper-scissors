@@ -70,6 +70,7 @@ function playGame(e) {
     } else {
       results.innerHTML += "<br>You lost this game!";
     }
+    results.innerHTML += "<br>Click any button to start a new game!";
     roundsPlayed = 0;
     playerScore = 0;
     cpuScore = 0;
