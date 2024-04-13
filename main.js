@@ -23,6 +23,9 @@ function playGame(e) {
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
   let playerMove = e.target.textContent;
+  // * Normalise the user's input letter case, so that they can type their move
+  // however they want.
+  playerMove = playerMove.toLowerCase();
   // * Ignore user input again if they didn't input a valid move.
   if (
     playerMove !== "rock" &&
@@ -94,9 +97,6 @@ function getComputerChoice() {
 // * Make a function that plays a round of rock paper scissors.
 function playRound(playerSelection, computerSelection) {
   let gameResult;
-  // * Normalise the user's input letter case, so that they can type their move
-  // however they want.
-  playerSelection = playerSelection.toLowerCase();
   // * Compare both variables and decide who's the winner according to the game's
   // rules.
   if (playerSelection === computerSelection) {
