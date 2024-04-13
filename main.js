@@ -27,9 +27,9 @@ function playGame(e) {
   playerMove = playerMove.toLowerCase();
   // * Ask for user input again if they didn't input a valid move.
   if (
-    playerMove === "rock" ||
-    playerMove === "paper" ||
-    playerMove === "scissors"
+    playerMove !== "rock" &&
+    playerMove !== "paper" &&
+    playerMove !== "scissors"
   ) {
     return;
   }
