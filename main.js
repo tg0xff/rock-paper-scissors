@@ -15,9 +15,6 @@ function playGame() {
   let cpuMove;
   let roundResult;
 
-  let playerScore = 0;
-  let cpuScore = 0;
-
   cpuMove = getComputerChoice();
   roundResult = playRound(playerMove, cpuMove);
 
@@ -109,6 +106,10 @@ function playRound(playerSelection, computerSelection) {
   }
   return gameResult;
 }
+
+let playerScore = 0;
+let cpuScore = 0;
+let roundsPlayed = 0;
 
 const button = document.querySelector("#buttons");
 button.addEventListener("click", (e) => {
