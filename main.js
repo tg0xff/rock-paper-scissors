@@ -64,11 +64,11 @@ function playGame(e) {
     roundsPlayed++;
   } else {
     if (playerScore === cpuScore) {
-      results.textContent = "This game is a draw!";
+      results.innerHTML += "<br>This game is a draw!";
     } else if (playerScore > cpuScore) {
-      results.textContent = "You won this game!";
+      results.innerHTML += "<br>You won this game!";
     } else {
-      results.textContent = "You lost this game!";
+      results.innerHTML += "<br>You lost this game!";
     }
     roundsPlayed = 0;
     playerScore = 0;
