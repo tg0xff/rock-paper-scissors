@@ -56,7 +56,7 @@ function playGame(e) {
   }
 
   // * Print the scores after playing each round.
-  results.textContent = `You: ${playerScore} CPU: ${cpuScore}`;
+  results.innerHTML += `<br>You: ${playerScore} CPU: ${cpuScore}`;
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
