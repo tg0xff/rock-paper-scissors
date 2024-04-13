@@ -26,7 +26,7 @@ function playGame(e) {
   // * Normalise the user's input letter case, so that they can type their move
   // however they want.
   playerMove = playerMove.toLowerCase();
-  // * Ignore user input again if they didn't input a valid move.
+  // * Ignore user input if they didn't input a valid move.
   if (
     playerMove !== "rock" &&
     playerMove !== "paper" &&
