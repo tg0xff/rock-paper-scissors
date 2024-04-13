@@ -37,14 +37,13 @@ function playGame(e) {
   case "s":
     playerMove = SCISSORS;
     break;
+  default:
+    playerMove = -1;
+    break;
   }
 
   // * Ignore user input if they didn't input a valid move.
-  if (
-    playerMove !== "rock" &&
-    playerMove !== "paper" &&
-    playerMove !== "scissors"
-  ) {
+  if (playerMove === -1) {
     return;
   }
 
