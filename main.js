@@ -8,6 +8,7 @@ let roundsPlayed = 0;
 
 const button = document.querySelector("#buttons");
 button.addEventListener("click", playGame);
+const results = document.querySelector("#results");
 
 function capitalizeFirstLetter(s) {
   let newString = s.slice(0, 1);
@@ -39,24 +40,20 @@ function playGame(e) {
     case DRAW:
       playerScore++;
       cpuScore++;
-      console.log(`Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`);
+      results.textContent = `Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`;
       break;
     case PLAYER_WINS:
       playerScore++;
-      console.log(
-        `You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`,
-      );
+      results.textContent = `You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`;
       break;
     case CPU_WINS:
       cpuScore++;
-      console.log(
-        `You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`,
-      );
+      results.textContent = `You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`;
       break;
   }
 
   // * Print the scores after playing each round.
-  console.log(`You: ${playerScore} CPU: ${cpuScore}`);
+  results.textContent = `You: ${playerScore} CPU: ${cpuScore}`;
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
@@ -64,11 +61,11 @@ function playGame(e) {
     roundsPlayed++;
   } else {
     if (playerScore === cpuScore) {
-      console.log("This game is a draw!");
+      results.textContent = "This game is a draw!";
     } else if (playerScore > cpuScore) {
-      console.log("You won this game!");
+      results.textContent = "You won this game!";
     } else {
-      console.log("You lost this game!");
+      results.textContent = "You lost this game!";
     }
     roundsPlayed = 0;
     playerScore = 0;
