@@ -25,7 +25,7 @@ function playGame(e) {
   // * Ask the user for input, so that they can make a move.
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
-  let playerMove = e.target.textContent;
+  let playerMove = e.target.getAttribute("id");
   // * Normalise the user's input letter case.
   playerMove = playerMove.toLowerCase();
   // * Ignore user input if they didn't input a valid move.
