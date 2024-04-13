@@ -20,6 +20,16 @@ function capitalizeFirstLetter(s) {
   return newString;
 }
 
+function getMoveName(moveSymbol) {
+  if (moveSymbol === ROCK) {
+    return "rock";
+  } else if (moveSymbol === PAPER) {
+    return "paper";
+  } else if (moveSymbol === SCISSORS) {
+    return "scissors";
+  }
+}
+
 // * Make a function that plays 5 rounds in a row.
 function playGame(e) {
   // * Ask the user for input, so that they can make a move.
