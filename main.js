@@ -26,6 +26,19 @@ function playGame(e) {
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
   let playerMove = e.target.getAttribute("id");
+
+  switch (playerMove) {
+  case "r":
+    playerMove = ROCK;
+    break;
+  case "p":
+    playerMove = PAPER;
+    break;
+  case "s":
+    playerMove = SCISSORS;
+    break;
+  }
+
   // * Normalise the user's input letter case.
   playerMove = playerMove.toLowerCase();
   // * Ignore user input if they didn't input a valid move.
