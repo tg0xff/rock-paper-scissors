@@ -112,3 +112,11 @@ function playRound(playerSelection, computerSelection) {
   }
   return gameResult;
 }
+
+const button = document.querySelector("#buttons");
+button.addEventListener("click", (e) => {
+  let playerMove = e.target.textContent;
+  playerMove = playerMove.toLowerCase();
+  let cpuMove = getComputerChoice();
+  console.log(playRound(playerMove, cpuMove));
+})
