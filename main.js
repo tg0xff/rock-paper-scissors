@@ -18,6 +18,11 @@ function playGame(e) {
   // * Normalise the user's input letter case, so that they can type their move
   // however they want.
   playerMove = playerMove.toLowerCase();
+  // * Ask for user input again if they didn't input a valid move.
+  if (move === "rock" || move === "paper" || move === "scissors") {
+    return;
+  }
+
   let cpuMove = getComputerChoice();
   let roundResult = playRound(playerMove, cpuMove);
 
