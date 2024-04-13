@@ -14,9 +14,7 @@ function playGame(e) {
   let playerMove = e.target.textContent;
   playerMove = playerMove.toLowerCase();
   let cpuMove = getComputerChoice();
-  let roundResult;
-
-  roundResult = playRound(playerMove, cpuMove);
+  let roundResult = playRound(playerMove, cpuMove);
 
   // * Print a sentence that tells the user who's the winner.
   switch (roundResult) {
