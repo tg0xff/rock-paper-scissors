@@ -23,8 +23,7 @@ function playGame(e) {
   // * Make a variable the stores the user's move.
   // * Store the player's move in its variable.
   let playerMove = e.target.textContent;
-  // * Normalise the user's input letter case, so that they can type their move
-  // however they want.
+  // * Normalise the user's input letter case.
   playerMove = playerMove.toLowerCase();
   // * Ignore user input if they didn't input a valid move.
   if (
