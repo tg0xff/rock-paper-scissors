@@ -18,31 +18,28 @@ function playGame() {
   let playerScore = 0;
   let cpuScore = 0;
 
-  for (let i = 0; i < 5; i++) {
-    playerMove = getPlayerChoice();
-    cpuMove = getComputerChoice();
-    roundResult = playRound(playerMove, cpuMove);
+  cpuMove = getComputerChoice();
+  roundResult = playRound(playerMove, cpuMove);
 
-    // * Print a sentence that tells the user who's the winner.
-    switch (roundResult) {
-      case DRAW:
-        playerScore++;
-        cpuScore++;
-        console.log(`Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`);
-        break;
-      case PLAYER_WINS:
-        playerScore++;
-        console.log(`You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`);
-        break;
-      case CPU_WINS:
-        cpuScore++;
-        console.log(`You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`);
-        break;
-    }
-
-    // * Print the scores after playing each round.
-    console.log(`You: ${playerScore} CPU: ${cpuScore}`);
+  // * Print a sentence that tells the user who's the winner.
+  switch (roundResult) {
+  case DRAW:
+    playerScore++;
+    cpuScore++;
+    console.log(`Draw! ${capitalizeFirstLetter(playerMove)} vs ${cpuMove}.`);
+    break;
+  case PLAYER_WINS:
+    playerScore++;
+    console.log(`You win this round! ${capitalizeFirstLetter(playerMove)} beats ${cpuMove}.`);
+    break;
+  case CPU_WINS:
+    cpuScore++;
+    console.log(`You lose this round! ${capitalizeFirstLetter(cpuMove)} beats ${playerMove}.`);
+    break;
   }
+
+  // * Print the scores after playing each round.
+  console.log(`You: ${playerScore} CPU: ${cpuScore}`);
 
   // * Determine who's the winner after the 5 rounds have been played.
   // * Print a message that informs the user who's the overall winner.
