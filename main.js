@@ -88,11 +88,11 @@ function getComputerChoice() {
   // * Use that random number to determine the CPU's move.
   // * Store the CPU's move in its variable.
   if (num <= 0.3333) {
-    move = "rock";
+    move = ROCK;
   } else if (num <= 0.6666) {
-    move = "paper";
+    move = PAPER;
   } else {
-    move = "scissors";
+    move = SCISSORS;
   }
   return move;
 }
