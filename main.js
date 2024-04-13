@@ -10,12 +10,12 @@ function capitalizeFirstLetter(s) {
 }
 
 // * Make a function that plays 5 rounds in a row.
-function playGame() {
-  let playerMove;
-  let cpuMove;
+function playGame(e) {
+  let playerMove = e.target.textContent;
+  playerMove = playerMove.toLowerCase();
+  let cpuMove = getComputerChoice();
   let roundResult;
 
-  cpuMove = getComputerChoice();
   roundResult = playRound(playerMove, cpuMove);
 
   // * Print a sentence that tells the user who's the winner.
